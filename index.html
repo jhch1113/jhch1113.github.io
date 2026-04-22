@@ -12,11 +12,10 @@
 	<link rel="stylesheet" href="css/style.css">
 	
 	<style>
-		/* --- Toast 스타일 추가 --- */
 		#toast {
 			visibility: hidden;
 			min-width: 250px;
-			background-color: #333; /* 배경색 (디자인에 맞춰 수정 가능) */
+			background-color: #333;
 			color: #fff;
 			text-align: center;
 			border-radius: 8px;
@@ -35,10 +34,10 @@
 		#toast.show {
 			visibility: visible;
 			opacity: 1;
-			bottom: 50px; /* 뜰 때 살짝 위로 올라오는 효과 */
+			bottom: 50px;
 		}
 
-		/* 복사 버튼 스타일 (링크처럼 보이게) */
+
 		.copy-btn {
 			background: none;
 			border: none;
@@ -178,7 +177,7 @@
 				<p class="kicker">Contact</p>
 				<div class="contact-links">
 					<a href="https://sites.google.com/view/aimhi-lab" target="_blank" rel="noopener noreferrer">AIMHI Lab</a>
-					<button class="copy-btn" onclick="copyEmail(event)" title="Click to copy email address">
+					<button class="copy-btn" onclick="copyEmail(event)" title="Click to copy email address" rel="noopener noreferrer">
 						Email: mtn2072@gachon.ac.kr (Copy)
 					</button>
 				</div>
@@ -194,10 +193,8 @@
 	</footer>
 
 	<script>
-		// 1. 연도 업데이트
 		document.getElementById('current-year').textContent = new Date().getFullYear();
 
-		// 2. 이메일 복사 및 토스트 표시 함수
 		function copyEmail(e) {
 			e.preventDefault();
 			const email = "mtn2072@gachon.ac.kr";
@@ -209,13 +206,11 @@
 			});
 		}
 
-		// 3. 토스트 작동 로직
 		function showToast(message) {
 			const toast = document.getElementById("toast");
 			toast.textContent = message;
 			toast.classList.add("show");
 
-			// 2.5초 후 자동 숨김
 			setTimeout(() => {
 				toast.classList.remove("show");
 			}, 2500);
