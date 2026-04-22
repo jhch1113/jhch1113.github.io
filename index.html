@@ -148,10 +148,19 @@
 			<div class="container contact-box">
 				<p class="kicker">Contact</p>
 				<div class="contact-links">
-					<a href="https://github.com/jhch1113" target="_blank" rel="noopener noreferrer">GitHub</a>
-					<a href="https://sites.google.com/view/aimhi-lab" target="_blank" rel="noopener noreferrer">AIMHI Lab</a>
-					<a href="mailto:mtn2072@gachon.ac.kr">Email</a>
+    				<a href="https://sites.google.com/view/aimhi-lab" target="_blank" rel="noopener noreferrer">AIMHI Lab</a>
+    				<a href="#" onclick="copyEmail(event)">Email Copy</a>
 				</div>
+
+				<script>
+				function copyEmail(e) {
+   					e.preventDefault();
+    				const email = "mtn2072@gachon.ac.kr";
+    				navigator.clipboard.writeText(email).then(() => {
+        				alert("이메일 주소가 복사되었습니다!");
+	    			});
+				}
+				</script>
 			</div>
 		</section>
 	</main>
