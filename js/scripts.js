@@ -1,45 +1,11 @@
 "use strict";
 
 (() => {
-    const root = document.documentElement;
     const header = document.querySelector(".site-header");
-    const themeToggle = document.querySelector(".theme-toggle");
-    const themeToggleText = document.querySelector(".theme-toggle-text");
     const menuToggle = document.querySelector(".menu-toggle");
     const siteNav = document.querySelector(".site-nav");
     const navLinks = Array.from(document.querySelectorAll(".site-nav a[href^='#']"));
     const sections = Array.from(document.querySelectorAll("main section[id]"));
-
-    const THEME_KEY = "jhch1113-theme";
-
-    const applyTheme = (theme) => {
-        root.setAttribute("data-theme", theme);
-        if (!themeToggle || !themeToggleText) {
-            return;
-        }
-        const isDark = theme === "dark";
-        themeToggle.setAttribute("aria-pressed", String(isDark));
-        themeToggleText.textContent = isDark ? "Light Mode" : "Dark Mode";
-    };
-
-    const getInitialTheme = () => {
-        const saved = window.localStorage.getItem(THEME_KEY);
-        if (saved === "light" || saved === "dark") {
-            return saved;
-        }
-        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    };
-
-    applyTheme(getInitialTheme());
-
-    if (themeToggle) {
-        themeToggle.addEventListener("click", () => {
-            const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-            const next = current === "dark" ? "light" : "dark";
-            applyTheme(next);
-            window.localStorage.setItem(THEME_KEY, next);
-        });
-    }
 
     const setHeaderState = () => {
         if (!header) {
