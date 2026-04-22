@@ -374,7 +374,9 @@ h1 {
 }
 
 .project-grid {
+	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.9rem;
 }
 
 .project-card {
@@ -408,13 +410,40 @@ h1 {
 }
 
 .contact-box {
-	padding: 1.1rem;
+    max-width: 30rem;      /* 박스의 최대 가로 넓이를 제한하여 좌우의 휑한 공간을 없앰 */
+    margin: 0 auto;        /* 화면 중앙에 박스를 예쁘게 정렬 */
+    padding: 2rem 2.5rem;  /* 위아래(2rem), 좌우(2.5rem) 안쪽 여백 설정 */
+}
+
+#contact.section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .contact-links {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 0.65rem;
+}
+
+/* Contact Section Compact Style */
+.contact-compact {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0; /* 이중으로 적용되던 내부 여백 제거 */
+}
+
+.contact-compact h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .contact-links a,
