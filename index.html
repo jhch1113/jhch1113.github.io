@@ -176,10 +176,12 @@
 			<div class="container contact-box">
 				<p class="kicker">Contact</p>
 				<div class="contact-links">
-					<a href="https://sites.google.com/view/aimhi-lab" target="_blank" rel="noopener noreferrer">AIMHI Lab</a>
-					<button class="copy-btn" onclick="copyEmail(event)" title="Click to copy email address" rel="noopener noreferrer">
-						Email: mtn2072@gachon.ac.kr (Copy)
-					</button>
+				    <a href="https://sites.google.com/view/aimhi-lab" target="_blank" rel="noopener noreferrer" class="contact-item">
+				        AIMHI Lab
+				    </a>
+				    <button onclick="copyEmail(event)" class="contact-item">
+				        Email
+				    </button>
 				</div>
 			</div>
 		</section>
@@ -205,6 +207,8 @@
 				console.error('Copy failed:', err);
 			});
 		}
+
+		
 
 		function showToast(message) {
 			const toast = document.getElementById("toast");
