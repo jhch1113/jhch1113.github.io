@@ -4,32 +4,68 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Research-focused CV portfolio of Jiho Chung">
+	<meta name="description" content="Research Portfolio of Jiho Chung | Undergraduate Student">
 	<title>Jiho Chung | Research CV</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-	<script src="js/scripts.js" defer></script>
+	
+	<style>
+		/* --- Toast 스타일 추가 --- */
+		#toast {
+			visibility: hidden;
+			min-width: 250px;
+			background-color: #333; /* 배경색 (디자인에 맞춰 수정 가능) */
+			color: #fff;
+			text-align: center;
+			border-radius: 8px;
+			padding: 16px;
+			position: fixed;
+			z-index: 1000;
+			left: 50%;
+			bottom: 30px;
+			transform: translateX(-50%);
+			font-size: 14px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			opacity: 0;
+			transition: opacity 0.4s, bottom 0.4s, visibility 0.4s;
+		}
+
+		#toast.show {
+			visibility: visible;
+			opacity: 1;
+			bottom: 50px; /* 뜰 때 살짝 위로 올라오는 효과 */
+		}
+
+		/* 복사 버튼 스타일 (링크처럼 보이게) */
+		.copy-btn {
+			background: none;
+			border: none;
+			color: inherit;
+			font: inherit;
+			cursor: pointer;
+			text-decoration: underline;
+			padding: 0;
+		}
+		.copy-btn:hover {
+			color: var(--primary-color, #007bff);
+		}
+	</style>
 </head>
 
 <body id="top">
+	<div id="toast">Email address copied!</div>
+
 	<header class="site-header">
 		<div class="container nav-row">
 			<a class="brand" href="#top" aria-label="Go to top">
 				<span class="brand-name">Jiho Chung</span>
-				<span class="brand-caption">Research CV</span>
+				<span class="brand-caption">Undergraduate Researcher</span>
 			</a>
-			<div class="header-controls">
-				<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
 			<nav class="site-nav" id="site-nav">
 				<a href="#about">About</a>
-				<a href="#focus">Focus</a>
+				<a href="#focus">Learning Path</a>
 				<a href="#projects">Projects</a>
 				<a href="#contact">Contact</a>
 			</nav>
@@ -40,10 +76,11 @@
 		<section class="hero section">
 			<div class="container hero-grid">
 				<div>
-					<h1>Explainable AI for Real Clinical Use</h1>
+					<h1>Building Foundations in Medical AI</h1>
 					<p class="hero-text">
-						I build research-driven machine learning workflows that prioritize explainability,
-						reproducibility, and practical reliability in medical imaging contexts.
+						Computer Science student at Gachon University. 
+						Currently exploring how deep learning can be applied to medical imaging 
+						with a focus on transparency and clinical reliability.
 					</p>
 					<div class="hero-actions">
 						<a class="btn btn-primary" href="#projects">View Projects</a>
@@ -52,8 +89,9 @@
 				</div>
 				<aside class="hero-panel">
 					<ul>
-						<li>Affiliation: Undergraduate Research Assitant, Gachon Univ.</li>
-						<li>Main Interests: Explainable AI, Medical Imaging, VLM</li>
+						<li><strong>Status:</strong> Undergraduate RA @ AIMHI Lab</li>
+						<li><strong>Major:</strong> Computer Science</li>
+						<li><strong>Interests:</strong> Computer Vision, Explainable AI</li>
 					</ul>
 				</aside>
 			</div>
@@ -63,26 +101,20 @@
 			<div class="container">
 				<div class="section-head">
 					<p class="kicker">About</p>
-					<h2>A Concise Research Profile</h2>
+					<h2>Research Interests</h2>
 				</div>
 				<div class="card-grid">
 					<article class="card">
-						<h3>Research Direction</h3>
-						<p>
-							I focus on building AI systems that can be explained, inspected,
-							and trusted in high-stakes decision-making environments.
-						</p>
+						<h3>Medical AI</h3>
+						<p>Interested in how AI can assist doctors in making more accurate diagnoses through medical image analysis.</p>
 					</article>
 					<article class="card">
-						<h3>Engineering Style</h3>
-						<p>
-							My workflow is centered on clean experiment structure, measurable validation,
-							and incremental iteration from hypothesis to implementation.
-						</p>
+						<h3>Explainability</h3>
+						<p>Studying ways to make AI decisions interpretable and trustworthy for actual clinical use.</p>
 					</article>
 					<article class="card">
-						<h3>Core Stack</h3>
-						<p>Python, TensorFlow/PyTorch, data preprocessing, model evaluation, reproducible pipelines.</p>
+						<h3>Reproducible Research</h3>
+						<p>Emphasizing clean code and structured experiment workflows to ensure verifiable research results.</p>
 					</article>
 				</div>
 			</div>
@@ -92,21 +124,21 @@
 			<div class="container">
 				<div class="section-head">
 					<p class="kicker">Focus</p>
-					<h2>Current Work and Direction</h2>
+					<h2>Academic Learning Path</h2>
 				</div>
 				<div class="timeline">
 					<article class="timeline-item">
-						<p class="timeline-label">Now</p>
+						<p class="timeline-label">Current</p>
 						<div>
-							<h3>Explainable Medical AI Prototypes</h3>
-							<p>I am prototyping explainable models and validating how interpretable outputs align with clinical reasoning.</p>
+							<h3>Deep Learning & Computer Vision</h3>
+							<p>Gaining hands-on experience with PyTorch and studying Vision architectures for medical data.</p>
 						</div>
 					</article>
 					<article class="timeline-item">
-						<p class="timeline-label">Current Priority</p>
+						<p class="timeline-label">Ongoing</p>
 						<div>
-							<h3>NCP MLXP Workflow</h3>
-							<p>I am organizing repeatable experiment workflows for training, tracking, and result comparison.</p>
+							<h3>Experiment Workflows</h3>
+							<p>Learning how to organize and track machine learning experiments (MLXP) for repeatable research.</p>
 						</div>
 					</article>
 				</div>
@@ -121,24 +153,21 @@
 				</div>
 				<div class="card-grid project-grid">
 					<article class="card project-card">
+						<span class="tag">Study</span>
+						<h3>Medical VLM Research Build</h3>
+						<p>Currently prototyping an explainable medical image interpretation system in the lab environment.</p>
+						<span class="status">In Progress</span>
+					</article>
+					<article class="card project-card">
+						<span class="tag">Engineering</span>
 						<h3>Tomcat Buk-Web</h3>
-						<p>JSP-based dynamic web project focused on server-side rendering and architecture fundamentals.</p>
+						<p>JSP-based dynamic web project focused on understanding server-side rendering and architecture.</p>
 						<a href="https://github.com/lHealMel/Tomcat_Buk_web" target="_blank" rel="noopener noreferrer">Open Repository</a>
 					</article>
 					<article class="card project-card">
 						<h3>Painter with Tkinter</h3>
-						<p>Interactive Python GUI practice with event handling and UI component structure.</p>
+						<p>Interactive Python GUI practice focused on event handling and component-based UI structure.</p>
 						<a href="https://github.com/lHealMel/painter" target="_blank" rel="noopener noreferrer">Open Repository</a>
-					</article>
-					<article class="card project-card">
-						<h3>Personal Homepage Refactor</h3>
-						<p>Full redesign and reconstruction of this site for a cleaner, professional CV presentation.</p>
-						<a href="https://github.com/lHealMel/lHealMel.github.io" target="_blank" rel="noopener noreferrer">Open Repository</a>
-					</article>
-					<article class="card project-card">
-						<h3>Next Research Build</h3>
-						<p>Preparing an open experiment template for explainable medical AI and evaluation workflows.</p>
-						<span class="status">In Progress</span>
 					</article>
 				</div>
 			</div>
@@ -148,19 +177,11 @@
 			<div class="container contact-box">
 				<p class="kicker">Contact</p>
 				<div class="contact-links">
-    				<a href="https://sites.google.com/view/aimhi-lab" target="_blank" rel="noopener noreferrer">AIMHI Lab</a>
-    				<a href="#" onclick="copyEmail(event)">Email Copy</a>
+					<a href="https://sites.google.com/view/aimhi-lab" target="_blank" rel="noopener noreferrer">AIMHI Lab</a>
+					<button class="copy-btn" onclick="copyEmail(event)" title="Click to copy email address">
+						Email: mtn2072@gachon.ac.kr (Copy)
+					</button>
 				</div>
-
-				<script>
-				function copyEmail(e) {
-   					e.preventDefault();
-    				const email = "mtn2072@gachon.ac.kr";
-    				navigator.clipboard.writeText(email).then(() => {
-        				alert("이메일 주소가 복사되었습니다!");
-	    			});
-				}
-				</script>
 			</div>
 		</section>
 	</main>
@@ -171,6 +192,35 @@
 			<a href="#top">Back to top</a>
 		</div>
 	</footer>
+
+	<script>
+		// 1. 연도 업데이트
+		document.getElementById('current-year').textContent = new Date().getFullYear();
+
+		// 2. 이메일 복사 및 토스트 표시 함수
+		function copyEmail(e) {
+			e.preventDefault();
+			const email = "mtn2072@gachon.ac.kr";
+			
+			navigator.clipboard.writeText(email).then(() => {
+				showToast("Email address copied!");
+			}).catch(err => {
+				console.error('Copy failed:', err);
+			});
+		}
+
+		// 3. 토스트 작동 로직
+		function showToast(message) {
+			const toast = document.getElementById("toast");
+			toast.textContent = message;
+			toast.classList.add("show");
+
+			// 2.5초 후 자동 숨김
+			setTimeout(() => {
+				toast.classList.remove("show");
+			}, 2500);
+		}
+	</script>
 </body>
 
 </html>
