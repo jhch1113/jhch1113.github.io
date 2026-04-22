@@ -78,7 +78,8 @@ a {
 }
 
 .section {
-	padding: clamp(4.25rem, 9vw, 6.8rem) 0;
+	padding-top: clamp(2.5rem, 6vw, 4.5rem);
+	padding-bottom: clamp(4.25rem, 9vw, 6.8rem);
 	border-top: 1px solid var(--line);
 }
 
@@ -214,7 +215,7 @@ a {
 
 .hero {
 	border-top: 0;
-	padding-top: clamp(5.8rem, 11vw, 8rem);
+	padding-top: clamp(4rem, 8vw, 6rem);
 }
 
 .hero-grid {
@@ -287,7 +288,6 @@ h1 {
 	background: var(--surface);
 }
 
-.hero-panel,
 .card,
 .timeline-item,
 .contact-box {
@@ -298,7 +298,29 @@ h1 {
 }
 
 .hero-panel {
-	padding: 1.1rem 1.1rem 1.15rem;
+	padding: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 320px;
+}
+
+.profile-image-wrapper {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.profile-image {
+	width: 140px;
+	height: 185px;
+	max-width: 100%;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto;
+	border-radius: 0.6rem;
+	border: 1px solid var(--line);
+	background-color: var(--surface-soft);
 }
 
 .hero-panel h2 {
@@ -309,9 +331,23 @@ h1 {
 .hero-panel ul {
 	list-style: none;
 	display: grid;
-	gap: 0.55rem;
-	font-size: 0.92rem;
+	gap: 1.2rem;
+	font-size: 0.94rem;
 	color: var(--text-muted);
+	width: 100%;
+	padding-top: 1.8rem;
+	border-top: 1px solid var(--line);
+	text-align: center;
+}
+
+.hero-panel ul li strong {
+	display: block;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 0.75rem;
+	color: var(--accent-strong);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin-bottom: 0.2rem;
 }
 
 .section-head {
